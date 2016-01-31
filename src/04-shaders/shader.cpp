@@ -24,6 +24,7 @@ void CompileShader(const std::string &text, GLuint shaderId)
 
     GLint compileResult;
     glGetShaderiv(shaderId, GL_COMPILE_STATUS, &compileResult);
+    std::cout << "Compile status: " << (compileResult ? "OK" : "FAIL") << std::endl;
     GLint logLen;
     glGetShaderiv(shaderId, GL_INFO_LOG_LENGTH, &logLen);
     if (logLen > 0) {
@@ -62,6 +63,7 @@ GLuint LoadShaders(const char *vertFile, const char *fragFile)
     glLinkProgram(program);
     GLint linkStatus;
     glGetProgramiv(program, GL_LINK_STATUS, &linkStatus);
+    std::cout << "Link status: " << (linkStatus ? "OK" : "FAIL") << std::endl;
     GLint linkLogLen;
     glGetProgramiv(program, GL_INFO_LOG_LENGTH, &linkLogLen);
     if (linkLogLen > 0) {
