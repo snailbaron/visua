@@ -2,9 +2,9 @@
 setlocal EnableExtensions
 setlocal EnableDelayedExpansion
 
-set "build_dir=%~dp0\build"
+set "build_dir=%~dp0build"
 
-if exist "%build_dir%" echo."Removing: %build_dir%"
+if exist "%build_dir%" rmdir /s /q "%build_dir%"
 mkdir "%build_dir%"
 cd "%build_dir%"
 
